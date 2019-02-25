@@ -1,0 +1,71 @@
+@model IEnumerable<juriAplicacao.Models.ParticipacaoConcurso>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Obs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropostaVencedora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvalicaoObtida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Concurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Concorente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Obs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropostaVencedora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvalicaoObtida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Concurso.IdConcurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Concorente.IdConcorente)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdParticipacaoConcurso">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdParticipacaoConcurso">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdParticipacaoConcurso">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

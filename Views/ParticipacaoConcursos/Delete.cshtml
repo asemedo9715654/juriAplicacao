@@ -1,0 +1,63 @@
+@model juriAplicacao.Models.ParticipacaoConcurso
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ParticipacaoConcurso</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Obs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Obs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PropostaVencedora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PropostaVencedora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AvalicaoObtida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvalicaoObtida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Concurso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Concurso.IdConcurso)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Concorente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Concorente.IdConcorente)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdParticipacaoConcurso" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

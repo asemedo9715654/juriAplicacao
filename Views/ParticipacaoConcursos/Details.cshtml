@@ -1,0 +1,60 @@
+@model juriAplicacao.Models.ParticipacaoConcurso
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ParticipacaoConcurso</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Obs)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Obs)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PropostaVencedora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PropostaVencedora)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AvalicaoObtida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvalicaoObtida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Concurso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Concurso.IdConcurso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Concorente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Concorente.IdConcorente)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdParticipacaoConcurso">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

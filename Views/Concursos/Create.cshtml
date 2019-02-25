@@ -1,0 +1,89 @@
+@model juriAplicacao.Models.Concurso
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Novo</h4>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+    </script>
+
+<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+<h4>Concurso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <label asp-for="Titulo" class="col-sm-3 col-form-label col-form-label-lg"></label>
+                <div class="col-sm-9">
+                <input asp-for="Titulo" class="form-control"  placeholder="Título"/>
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div> 
+            </div>
+            <div class="form-group row">
+                <label asp-for="Descricao" class="col-sm-3 col-form-label col-form-label-lg"></label>
+                <div class="col-sm-9">
+                    <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <label asp-for="Obs" class="col-sm-3 col-form-label col-form-label-lg"></label>
+                  <div class="col-sm-9">
+                     <input asp-for="Obs" class="form-control" />
+                <span asp-validation-for="Obs" class="text-danger"></span>
+                </div>
+               
+            </div>
+            <div class="form-group row">
+                <label asp-for="DataInicio" class="col-sm-3 col-form-label col-form-label-lg"></label>
+                  <div class="col-sm-9">
+                      <input asp-for="DataInicio" class="form-control" />
+                <span asp-validation-for="DataInicio" class="text-danger"></span>
+                </div>
+              
+            </div>
+            <div class="form-group row">
+                <label asp-for="DataFim" class="col-sm-3 col-form-label col-form-label-lg"></label>
+                  <div class="col-sm-9">
+                    <input asp-for="DataFim" class="form-control"  id="DataFim"/>
+                <span asp-validation-for="DataFim" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <label asp-for="PrecoBase" class="col-sm-3 col-form-label col-form-label-lg"></label>
+                  <div class="col-sm-9">
+                      <input asp-for="PrecoBase" class="form-control" />
+                <span asp-validation-for="PrecoBase" class="text-danger"></span>
+                </div>
+              
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    <script>
+         $('#DataFim').datepicker();
+    </script>
+    
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

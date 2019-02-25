@@ -1,0 +1,30 @@
+@model juriAplicacao.Models.JuriConcurso
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>JuriConcurso</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Juri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Juri.IdJuri)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Concurso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Concurso.IdConcurso)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdJuriConcurso">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

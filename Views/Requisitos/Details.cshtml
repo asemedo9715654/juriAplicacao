@@ -1,0 +1,48 @@
+@model juriAplicacao.Models.Requisitos
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Requisitos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PontuacaoMaxima)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PontuacaoMaxima)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PontuacaoMinimo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PontuacaoMinimo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoAvalicao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoAvalicao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Concurso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Concurso.IdConcurso)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdRequisitos">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
